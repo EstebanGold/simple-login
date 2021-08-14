@@ -37,10 +37,6 @@ export default function LoginCard() {
   const handlePasswordChange = (pass) => {
     setPass(pass.target.value);
   };
-  const handleDisable = () => {
-    console.log(userName && pass);
-    return userName && pass;
-  };
 
   return (
     <div>
