@@ -28,9 +28,7 @@ export default function LoginCard() {
   const handleLogin = () => {
     setOpen(true);
   };
-  const handleClose = () => {
-    setOpen(false);
-  };
+
   const handleUsernameChange = (user) => {
     setUserName(user.target.value);
   };
@@ -39,7 +37,7 @@ export default function LoginCard() {
   };
 
   return (
-    <div>
+    <form>
       <Card variant="outlined">
         <CardContent>
           <div>
@@ -62,6 +60,7 @@ export default function LoginCard() {
         </CardContent>
         <CardActions>
           <Button
+            type="submit"
             variant="contained"
             size="large"
             color="secondary"
@@ -73,7 +72,7 @@ export default function LoginCard() {
           </Button>
         </CardActions>
       </Card>
-      <LoginDialog userName={userName} open={open} onClose={handleClose} />
-    </div>
+      <LoginDialog userName={userName} open={open} />
+    </form>
   );
 }

@@ -1,17 +1,15 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import Grid from "@material-ui/core/Grid";
+import { Grid } from "@material-ui/core";
 
 import LoginCard from "./LoginCard";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   root: {
     flexGrow: 1,
   },
-  paper: {
-    padding: theme.spacing(2),
-    textAlign: "center",
-    color: theme.palette.text.secondary,
+  container: {
+    marginTop: 250,
   },
 }));
 
@@ -19,17 +17,17 @@ export default function LoginGrid() {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
-      <Grid
-        container
-        direction="column"
-        justifyContent="center"
-        alignItems="center"
-      >
-        <Grid item xs={12} sm={6}>
-          <LoginCard />
-        </Grid>
-      </Grid>
-    </div>
+    <Grid
+      container
+      className={(classes.root, classes.container)}
+      direction="column"
+      alignContent="center"
+      item
+      xs={12}
+      sm={12}
+      md={12}
+    >
+      <LoginCard />
+    </Grid>
   );
 }

@@ -1,30 +1,21 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import Grid from "@material-ui/core/Grid";
-import Dialog from "@material-ui/core/Dialog";
-import CircularProgress from "@material-ui/core/CircularProgress";
+import { Grid, Dialog, CircularProgress } from "@material-ui/core";
 
-const emails = ["username@gmail.com", "user02@gmail.com"];
 const useStyles = makeStyles({
   grid: {
     height: 200,
   },
+  closeButton: {
+    position: "absolute",
+  },
 });
 
-export default function LoginDialog(props) {
+export default function LoginDialog({ userName, open }) {
   const classes = useStyles();
-  const { onClose, userName, open } = props;
-
-  const handleClose = () => {
-    onClose();
-  };
 
   return (
-    <Dialog
-      onClose={handleClose}
-      aria-labelledby="simple-dialog-title"
-      open={open}
-    >
+    <Dialog open={open}>
       <Grid
         className={classes.grid}
         container
